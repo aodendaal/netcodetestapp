@@ -42,9 +42,10 @@ public class QuantumSessionManager : MonoBehaviour
         {
             currentSession.Changed += () => { Debug.LogWarning($"Session changed."); };
             currentSession.Deleted += () => { Debug.LogWarning("Session has been deleted."); };
+            currentSession.PlayerHasLeft += (player) => { Debug.LogWarning($"Player {player} has left the session."); };
             currentSession.PlayerJoined += (player) => { Debug.LogWarning($"Player {player} joined the session."); };
             currentSession.PlayerLeaving += (player) => { Debug.LogWarning($"Player {player} is leaving the session."); };
-            currentSession.PlayerHasLeft += (player) => { Debug.LogWarning($"Player {player} has left the session."); };
+            currentSession.PlayerPropertiesChanged += () => { Debug.LogWarning("Player properties changed."); };
             currentSession.RemovedFromSession += () => { Debug.LogWarning("You have been removed from the session."); };
             currentSession.SessionHostChanged += (player) => { Debug.LogWarning($"Session host changed to {player}."); };
             currentSession.SessionMigrated += () => { Debug.LogWarning($"Session migrated."); };
