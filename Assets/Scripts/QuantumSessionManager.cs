@@ -138,4 +138,17 @@ public class QuantumSessionManager : MonoBehaviour
             Debug.Log("No session to get state from");
         }
     }
+
+    [Command()]
+    public void SessionCode()
+    {
+        if (currentSession != null)
+        {
+            Debug.Log($"Session code: {currentSession.Code}");
+        }
+        else
+        {
+            Debug.Log("No session to get code from");
+        }
+    }
 }
