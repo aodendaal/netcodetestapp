@@ -13,9 +13,15 @@ public class MainMenu : MonoBehaviour
         joinMenu.SetActive(false);
     }
 
-    public void OnHostButtonClicked()
+    public async void OnHostButtonClicked()
     {
         Debug.Log("Host button clicked");
+
+        initMenu.SetActive(false);
+        joinMenu.SetActive(false);
+
+        await SessionManager.Instance.Initialize();
+        await SessionManager.Instance.CreateSession();
     }
 
     public void OnShowJoinButtonClicked()
@@ -27,6 +33,9 @@ public class MainMenu : MonoBehaviour
 
     public void OnJoinButtonClicked()
     {
+        initMenu.SetActive(false);
+        joinMenu.SetActive(false);
+
         string joinCode = codeInput.text;
         Debug.Log($"Join button clicked with code: {joinCode}");
     }
