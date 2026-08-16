@@ -57,7 +57,7 @@ public class NetworkPlayerController : NetworkBehaviour
     {
         var move = _playerInput.GetMoveInput();
 
-        _characterController.Move(move * _speed);
+        _characterController.Move(move * _speed * Time.deltaTime);
     }
 
     private void Look()
