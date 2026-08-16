@@ -48,7 +48,7 @@ public class NetworkPlayerController : NetworkBehaviour
     {
         var input = _playerInput.GetLookHorizontalInput();
 
-        var v = new Vector3(0, input * _lookSpeed * 0.4f, 0);
+        var v = new Vector3(0, input * _lookSpeed, 0);
 
         transform.Rotate(v, Space.Self);
     }

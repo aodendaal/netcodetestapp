@@ -13,6 +13,9 @@ public class PlayerInput : MonoBehaviour
 
         _moveAction.Enable();
         _lookAction.Enable();
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public Vector3 GetMoveInput()
