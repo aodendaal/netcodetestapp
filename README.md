@@ -12,6 +12,7 @@ Requires Unity 6.4 (6000.4.4f1) or higher.
 - quit
 - SessionCode
 - SessionState
+- user-commands
 
 ## Note
 
